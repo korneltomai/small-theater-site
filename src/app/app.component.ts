@@ -12,4 +12,6 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 })
 export class AppComponent {
   title = 'small-theater-site';
+
+  
 }

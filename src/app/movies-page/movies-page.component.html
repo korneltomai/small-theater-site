@@ -1,1 +1,26 @@
-<p>movies-page works!</p>
+<div class="container">  
+  <table class="table table-striped">  
+    <thead>  
+      <tr>  
+        <th>ID</th>  
+        <th>Title</th>  
+        <th>Description</th>  
+        <th>Year</th>
+        <th>Director</th>
+        <th>Genres</th>
+        <th>Length</th>
+      </tr>  
+    </thead>  
+    <tbody>  
+      <tr *ngFor="let movie of movies">  
+        <td>{{ movie.id }}</td>  
+        <td>{{ movie.title }}</td>  
+        <td>{{ movie.description }}</td>  
+        <td>{{ movie.releaseYear }}</td>  
+        <td>{{ movie.director }}</td>  
+        <td>{{ movie.genres }}</td>  
+        <td>{{ movie.length }}</td>  
+      </tr>  
+    </tbody>  
+  </table>  
+</div>  
