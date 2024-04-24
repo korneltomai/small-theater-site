@@ -8,6 +8,8 @@ import { Movie } from './movie';
 })
 export class InMemoryDataService implements InMemoryDbService {
 
+  readonly baseUrl = "../assets";
+
   createDb() {
     const movies = [
       {
@@ -16,8 +18,9 @@ export class InMemoryDataService implements InMemoryDbService {
         "description": "This is movie1.",
         "releaseYear": 2024,
         "director": "Johnny John",
-        "genres": ["action", "drama", "thriller"],
-        "length": 25
+        "genres": ["Action", "Drama", "Thriller"],
+        "length": 25,
+        "imagePath": `${this.baseUrl}/movie.png`
       },
       {
         "id": 2,
@@ -25,8 +28,9 @@ export class InMemoryDataService implements InMemoryDbService {
         "description": "This is movie2.",
         "releaseYear": 2020,
         "director": "Adam Smith",
-        "genres": ["action", "drama"],
-        "length": 45
+        "genres": ["Action", "Drama"],
+        "length": 45,
+        "imagePath": `${this.baseUrl}/movie.png`
       },
       {
         "id": 3,
@@ -34,8 +38,9 @@ export class InMemoryDataService implements InMemoryDbService {
         "description": "This is movie3.",
         "releaseYear": 2014,
         "director": "Johnny John",
-        "genres": ["drama", "thriller"],
-        "length": 100
+        "genres": ["Drama", "Thriller"],
+        "length": 100,
+        "imagePath": `${this.baseUrl}/movie.png`
       },
       {
         "id": 4,
@@ -43,8 +48,9 @@ export class InMemoryDataService implements InMemoryDbService {
         "description": "This is movie4.",
         "releaseYear": 2022,
         "director": "Peter Parker",
-        "genres": ["thriller"],
-        "length": 12
+        "genres": ["Thriller"],
+        "length": 12,
+        "imagePath": `${this.baseUrl}/movie.png`
       },
       {
         "id": 5,
@@ -52,8 +58,9 @@ export class InMemoryDataService implements InMemoryDbService {
         "description": "This is movie5.",
         "releaseYear": 2018,
         "director": "Erica Ludendorf",
-        "genres": ["action", "comedy"],
-        "length": 30
+        "genres": ["Action", "Comedy"],
+        "length": 30,
+        "imagePath": `${this.baseUrl}/movie.png`
       }
     ];
     return {movies};

@@ -1,26 +1,25 @@
-<div class="container">  
-  <table class="table table-striped">  
-    <thead>  
-      <tr>  
-        <th>ID</th>  
-        <th>Title</th>  
-        <th>Description</th>  
-        <th>Year</th>
-        <th>Director</th>
-        <th>Genres</th>
-        <th>Length</th>
-      </tr>  
-    </thead>  
-    <tbody>  
-      <tr *ngFor="let movie of movies">  
-        <td>{{ movie.id }}</td>  
-        <td>{{ movie.title }}</td>  
-        <td>{{ movie.description }}</td>  
-        <td>{{ movie.releaseYear }}</td>  
-        <td>{{ movie.director }}</td>  
-        <td>{{ movie.genres }}</td>  
-        <td>{{ movie.length }}</td>  
-      </tr>  
-    </tbody>  
-  </table>  
-</div>  
+<div class="container">
+  <div class="container w-75 mx-auto" *ngFor="let movie of movies">
+    <div class="card my-4 text-dark bg-light">
+      <div class="row g-0">
+        <div class="col-md-4 col-lg-3 col-xl-2">
+          <img class="img-fluid rounded" src="{{ movie.imagePath }}" alt="Poster image for movie '{{ movie.title }}'">
+        </div>
+        <div class="col-md-8 col-lg-9 col-xl-10">
+          <div class="card-body">
+            <h3 class="card-title">{{ movie.title }}</h3>
+            <h6 class="card-subtitle mb-3 text-muted">{{ movie.genres }}</h6>
+            <p class="card-text">
+                Released: {{ movie.releaseYear }} <br>
+                Director: {{ movie.director }} <br>
+                Length: {{ movie.length }} minutes
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="hr" />
+  </div>
+</div>
+
+
