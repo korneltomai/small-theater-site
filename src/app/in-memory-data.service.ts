@@ -16,51 +16,56 @@ export class InMemoryDataService implements InMemoryDbService {
         "id": 1,
         "title": "Movie1",
         "description": "This is movie1.",
-        "releaseYear": 2024,
+        "releaseTime": "2024/1/1",
         "director": "Johnny John",
         "genres": ["Action", "Drama", "Thriller"],
-        "length": 25,
-        "imagePath": `${this.baseUrl}/movie.png`
+        "runningTime": 25,
+        "imagePath": `${this.baseUrl}/movie.png`,
+        "url": "movie-1"
       },
       {
         "id": 2,
         "title": "Movie2",
         "description": "This is movie2.",
-        "releaseYear": 2020,
+        "releaseTime": "2020/1/1",
         "director": "Adam Smith",
         "genres": ["Action", "Drama"],
-        "length": 45,
-        "imagePath": `${this.baseUrl}/movie.png`
+        "runningTime": 45,
+        "imagePath": `${this.baseUrl}/movie.png`,
+        "url": "movie-2"
       },
       {
         "id": 3,
         "title": "Movie3",
         "description": "This is movie3.",
-        "releaseYear": 2014,
+        "releaseTime": "2014/1/1",
         "director": "Johnny John",
         "genres": ["Drama", "Thriller"],
-        "length": 100,
-        "imagePath": `${this.baseUrl}/movie.png`
+        "runningTime": 100,
+        "imagePath": `${this.baseUrl}/movie.png`,
+        "url": "movie-3"
       },
       {
         "id": 4,
         "title": "Movie4",
         "description": "This is movie4.",
-        "releaseYear": 2022,
+        "releaseTime": "2022/1/1",
         "director": "Peter Parker",
         "genres": ["Thriller"],
-        "length": 12,
-        "imagePath": `${this.baseUrl}/movie.png`
+        "runningTime": 12,
+        "imagePath": `${this.baseUrl}/movie.png`,
+        "url": "movie-4"
       },
       {
         "id": 5,
         "title": "Movie5",
         "description": "This is movie5.",
-        "releaseYear": 2018,
+        "releaseTime": "2018/1/1",
         "director": "Erica Ludendorf",
         "genres": ["Action", "Comedy"],
-        "length": 30,
-        "imagePath": `${this.baseUrl}/movie.png`
+        "runningTime": 30,
+        "imagePath": `${this.baseUrl}/movie.png`,
+        "url": "movie-5"
       }
     ];
     return {movies};

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable} from 'rxjs';
+import { Observable, catchError, of} from 'rxjs';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { Movie } from './movie';
@@ -20,4 +20,15 @@ export class MovieService {
   getMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(this.moviesUrl);
   }
+
+  getMovie(id: number): Observable<Movie> {
+    return this.http.get<Movie>(`${this.moviesUrl}/${id}`).pipe(catchError(this.handleError<Movie>()));
+  }
+
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      return of(result as T);
+    };
+  }
+
 }

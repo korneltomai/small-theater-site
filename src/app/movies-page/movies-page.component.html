@@ -1,25 +1,27 @@
 <div class="container">
-  <div class="container w-75 mx-auto" *ngFor="let movie of movies">
-    <div class="card my-4 text-dark bg-light">
-      <div class="row g-0">
-        <div class="col-md-4 col-lg-3 col-xl-2">
-          <img class="img-fluid rounded" src="{{ movie.imagePath }}" alt="Poster image for movie '{{ movie.title }}'">
-        </div>
-        <div class="col-md-8 col-lg-9 col-xl-10">
-          <div class="card-body">
-            <h3 class="card-title">{{ movie.title }}</h3>
-            <h6 class="card-subtitle mb-3 text-muted">{{ movie.genres }}</h6>
-            <p class="card-text">
-                Released: {{ movie.releaseYear }} <br>
-                Director: {{ movie.director }} <br>
-                Length: {{ movie.length }} minutes
-            </p>
+  <ul>
+    <li class="container w-75 mx-auto" *ngFor="let movie of movies; last as isLast">
+      <a [routerLink]="['/movies', movie.id]">
+        <div class="card my-4 text-dark bg-light">
+          <div class="row g-0">
+            <div class="col-md-4 col-lg-3 col-xl-2">
+              <img class="img-fluid rounded" src="{{ movie.imagePath }}" alt="Poster image for movie '{{ movie.title }}'">
+            </div>
+            <div class="col-md-8 col-lg-9 col-xl-10">
+              <div class="card-body">
+                <h3 class="card-title">{{ movie.title }}</h3>
+                <h6 class="card-subtitle mb-3 text-muted">{{ movie.genres }}</h6>
+                <p class="card-text">
+                    Released: {{ movie.releaseTime | date }} <br>
+                    Director: {{ movie.director }} <br>
+                    Running Time: {{ movie.runningTime }} minutes
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <hr class="hr" />
-  </div>
+      </a>
+      <hr *ngIf="!isLast" class="hr" />
+    </li>
+  </ul>
 </div>
-
-

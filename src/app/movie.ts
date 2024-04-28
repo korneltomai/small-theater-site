@@ -2,10 +2,11 @@ export interface Movie {
     id: number;
     title: string;
     description: string;
-    releaseYear: number;
+    releaseTime: string;
     director: string;
     genres: string[];
-    length: number;
+    runningTime: number;
     imagePath: string;
+    url: string;
   }
   
