@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgFor, NgIf, DatePipe} from '@angular/common'
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
@@ -13,16 +13,11 @@ import { MovieService } from '../movie.service';
   styleUrl: './movies-page.component.scss'
 })
 export class MoviesPageComponent {
-  movies : Movie[] | undefined;
+  movies : Movie[] = [];
 
-  constructor(private movieService: MovieService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.getMovies();
+    this.route.data.subscribe(({ movies }) => this.movies = movies );
   }
-
-  getMovies(): void {
-    this.movieService.getMovies().subscribe(movies => this.movies = movies);
-  }
-
 }
