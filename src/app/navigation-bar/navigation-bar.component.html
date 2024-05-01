@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">{{title}}</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -17,7 +17,7 @@
         mdbCollapse
         #toggler="mdbCollapse">
 
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li *ngFor = "let items of menuItems" class="nav-item">
                 <a class="nav-link" [routerLink]="[items.linkURL]" routerLinkActive="active-page" ariaCurrentWhenActive="page"> 
                     {{items.linkName}}

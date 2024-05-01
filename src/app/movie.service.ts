@@ -16,9 +16,7 @@ export class MovieService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor(private http: HttpClient) {
-    
-  }
+  constructor(private http: HttpClient) {}
 
   getMovies(): Observable<Movie[]> {
     if (this.movies)

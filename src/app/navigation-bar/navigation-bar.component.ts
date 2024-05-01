@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -12,6 +12,9 @@ import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
   styleUrl: './navigation-bar.component.scss'
 })
 export class NavigationBarComponent {
+  @Input()
+  title: string = "";
+
   menuItems = [
     {linkId: 1, linkName: 'Home', linkURL: '/home'},
     {linkId: 2, linkName: 'About Us', linkURL: '/about-us'},

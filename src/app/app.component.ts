@@ -11,7 +11,7 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'small-theater-site';
+  title = 'Small Theater';
 
   
 }
