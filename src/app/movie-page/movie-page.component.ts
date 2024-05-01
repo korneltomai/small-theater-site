@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { NgIf } from '@angular/common'
+import { NgIf, DatePipe } from '@angular/common'
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
+import { MovieScreeningsComponent } from "../movie-screenings/movie-screenings.component";
 
 @Component({
-  selector: 'app-movie-page',
-  standalone: true,
-  imports: [NgIf],
-  templateUrl: './movie-page.component.html',
-  styleUrl: './movie-page.component.scss'
+    selector: 'app-movie-page',
+    standalone: true,
+    templateUrl: './movie-page.component.html',
+    styleUrl: './movie-page.component.scss',
+    imports: [NgIf, DatePipe, MovieScreeningsComponent]
 })
 export class MoviePageComponent implements OnInit {
   
