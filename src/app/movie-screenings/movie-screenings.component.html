@@ -1,13 +1,10 @@
 <div class="container mt-5">
     <h2>Screenings</h2>
     <mat-tab-group>
-        <mat-tab label="Today"> Content 1 </mat-tab>
-        <mat-tab label="{{ days[getFutureDay(1)] }}"> Content 2 </mat-tab>
-        <mat-tab label="{{ days[getFutureDay(2)] }}"> Content 3 </mat-tab>
-        <mat-tab label="{{ days[getFutureDay(3)] }}"> Content 4 </mat-tab>
-        <mat-tab label="{{ days[getFutureDay(4)] }}"> Content 5 </mat-tab>
-        <mat-tab label="{{ days[getFutureDay(5)] }}"> Content 6 </mat-tab>
-        <mat-tab label="{{ days[getFutureDay(6)] }}"> Content 7 </mat-tab>
+        <ng-container *ngFor="let oneComponent of amountOfRepetetions; index as i">
+            <mat-tab label="{{ getWeekday(i) }}">
+                <p *ngFor="let s of screenings | screenings:i:screeningFilter.bind(this)">{{s.id}}</p>
+            </mat-tab>
+        </ng-container>
     </mat-tab-group>
 </div>
-    

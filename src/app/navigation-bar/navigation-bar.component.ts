@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgFor } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
@@ -7,7 +7,7 @@ import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 @Component({
   selector: 'app-navigation-bar',
   standalone: true,
-  imports: [CommonModule, RouterModule, MdbCollapseModule],
+  imports: [NgFor, RouterModule, MdbCollapseModule],
   templateUrl: './navigation-bar.component.html',
   styleUrl: './navigation-bar.component.scss'
 })

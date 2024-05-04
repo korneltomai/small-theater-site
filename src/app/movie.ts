@@ -1,3 +1,5 @@
+import { Screening } from './screening' 
+
 export interface Movie {
     id: number;
     title: string;
@@ -8,5 +10,6 @@ export interface Movie {
     runningTime: number;
     imagePath: string;
     url: string;
+    screenings: Screening[]
   }
   

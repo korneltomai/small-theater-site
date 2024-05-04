@@ -24,7 +24,8 @@ export class MoviePageComponent implements OnInit {
     genres: [],
     runningTime: 0,
     imagePath: '',
-    url: ''
+    url: '',
+    screenings: []
   };
 
   constructor(private route: ActivatedRoute, private router: Router, private movieService: MovieService) {}
