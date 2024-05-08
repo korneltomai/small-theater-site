@@ -31,6 +31,7 @@ export class MovieScreeningsComponent {
     return this.days[this.getFutureDate(index).getDay()];
   }
 
+  // Filter for the screenings pipe that filters screenings for a specific day in the future
   screeningFilter(screening: Screening, dayAhead: number): boolean {
     let sDate = new Date(screening.date);
     return sDate.getDate() === this.getFutureDate(dayAhead).getDate();

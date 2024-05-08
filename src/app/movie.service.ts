@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, catchError, of, share, map} from 'rxjs';
+import { Observable, share, map} from 'rxjs';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { Movie } from './movie';

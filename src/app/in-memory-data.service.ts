@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
-import { Movie } from './movie';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -21,57 +19,7 @@ export class InMemoryDataService implements InMemoryDbService {
         "genres": ["Action", "Drama", "Thriller"],
         "runningTime": 25,
         "imagePath": `${this.baseUrl}/movie.png`,
-        "url": "movie-1",
-        "screenings": [
-          {
-            "id": 1,
-            "price": 5,
-            "date": "2024-05-01, 15:00",
-            "seats": []
-          },
-          {
-            "id": 2,
-            "price": 5,
-            "date": "2024-05-01, 19:30",
-            "seats": []
-          },
-          {
-            "id": 3,
-            "price": 5,
-            "date": "2024-05-03, 09:00",
-            "seats": []
-          },
-          {
-            "id": 4,
-            "price": 5,
-            "date": "2024-05-03, 12:30",
-            "seats": []
-          },
-          {
-            "id": 5,
-            "price": 5,
-            "date": "2024-05-03, 16:30",
-            "seats": []
-          },
-          {
-            "id": 6,
-            "price": 5,
-            "date": "2024-05-03, 19:00",
-            "seats": []
-          },
-          {
-            "id": 7,
-            "price": 5,
-            "date": "2024-05-03, 21:00",
-            "seats": []
-          },
-          {
-            "id": 7,
-            "price": 5,
-            "date": "2024-05-04, 13:00",
-            "seats": []
-          }
-        ]
+        "url": "movie-1"
       },
       {
         "id": 2,
@@ -82,8 +30,7 @@ export class InMemoryDataService implements InMemoryDbService {
         "genres": ["Action", "Drama"],
         "runningTime": 45,
         "imagePath": `${this.baseUrl}/movie.png`,
-        "url": "movie-2",
-        "screenings": []
+        "url": "movie-2"
       },
       {
         "id": 3,
@@ -94,8 +41,7 @@ export class InMemoryDataService implements InMemoryDbService {
         "genres": ["Drama", "Thriller"],
         "runningTime": 100,
         "imagePath": `${this.baseUrl}/movie.png`,
-        "url": "movie-3",
-        "screenings": []
+        "url": "movie-3"
       },
       {
         "id": 4,
@@ -106,8 +52,7 @@ export class InMemoryDataService implements InMemoryDbService {
         "genres": ["Thriller"],
         "runningTime": 12,
         "imagePath": `${this.baseUrl}/movie.png`,
-        "url": "movie-4",
-        "screenings": []
+        "url": "movie-4"
       },
       {
         "id": 5,
@@ -118,10 +63,69 @@ export class InMemoryDataService implements InMemoryDbService {
         "genres": ["Action", "Comedy"],
         "runningTime": 30,
         "imagePath": `${this.baseUrl}/movie.png`,
-        "url": "movie-5",
-        "screenings": []
+        "url": "movie-5"
       }
     ];
-    return {movies};
+
+    const screenings = [
+      {
+        "id": 1,
+        "movieId": 1,
+        "price": 5,
+        "date": "2024-05-01, 15:00",
+        "seats": []
+      },
+      {
+        "id": 2,
+        "movieId": 1,
+        "price": 5,
+        "date": "2024-05-01, 19:30",
+        "seats": []
+      },
+      {
+        "id": 3,
+        "movieId": 1,
+        "price": 5,
+        "date": "2024-05-03, 09:00",
+        "seats": []
+      },
+      {
+        "id": 4,
+        "movieId": 1,
+        "price": 5,
+        "date": "2024-05-03, 12:30",
+        "seats": []
+      },
+      {
+        "id": 5,
+        "movieId": 1,
+        "price": 5,
+        "date": "2024-05-03, 16:30",
+        "seats": []
+      },
+      {
+        "id": 6,
+        "movieId": 1,
+        "price": 5,
+        "date": "2024-05-03, 19:00",
+        "seats": []
+      },
+      {
+        "id": 7,
+        "movieId": 1,
+        "price": 5,
+        "date": "2024-05-03, 21:00",
+        "seats": []
+      },
+      {
+        "id": 7,
+        "movieId": 1,
+        "price": 5,
+        "date": "2024-05-04, 13:00",
+        "seats": []
+      }
+    ];
+
+    return {movies, screenings};
   }
 }

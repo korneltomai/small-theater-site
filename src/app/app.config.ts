@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideNoopAnimations(), 
     provideHttpClient(),
     importProvidersFrom([
-      HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false })
+      HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { apiBase: 'api', dataEncapsulation: false })
     ]), provideAnimationsAsync()
   ]
 };

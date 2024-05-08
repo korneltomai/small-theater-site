@@ -1,4 +1,4 @@
-import { Routes, UrlSegment } from '@angular/router';
+import { Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { GiftPageComponent } from './gift-page/gift-page.component';
@@ -6,6 +6,7 @@ import { MoviesPageComponent } from './movies-page/movies-page.component';
 import { MoviePageComponent } from './movie-page/movie-page.component';
 import { movieResolver } from './movie-resolver.service';
 import { moviesResolver } from './movie-resolver.service';
+import { screeningsResolver } from './screening-resolver.service';
 
 export const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -14,6 +15,6 @@ export const routes: Routes = [
     {path: 'whats-on', component: MoviesPageComponent, resolve: { movies: moviesResolver }},
     {path: 'gift', component: GiftPageComponent},
     {path: 'movies', redirectTo: '/whats-on', pathMatch: 'full'},
-    {path: 'movies/:id', component: MoviePageComponent, resolve: { movie: movieResolver }},
+    {path: 'movies/:id', component: MoviePageComponent, resolve: { movie: movieResolver, screenings: screeningsResolver }},
     {path: '**', redirectTo: '/home'}
 ];
