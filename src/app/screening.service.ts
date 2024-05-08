@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, share} from 'rxjs';
+import { Observable, catchError, share, of} from 'rxjs';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { Screening } from './screening';
@@ -20,5 +20,9 @@ export class ScreeningService {
   getScreenings(movieId: number): Observable<Screening[]> {
     return this.http.get<Screening[]>(`${this.screeningsUrl}?movieId=${movieId}`).pipe(share());
   }
+
+  getScreening(id: number): Observable<Screening | undefined> {
+    return this.http.get<Screening>(`${this.screeningsUrl}/${id}`).pipe(share(), catchError(err => of(undefined)));
+  };
 
 }

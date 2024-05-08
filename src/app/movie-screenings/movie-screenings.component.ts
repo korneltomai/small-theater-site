@@ -1,13 +1,15 @@
 import { Component, Input } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, DatePipe } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
 import { Screening } from '../screening';
 import { ScreeningPipe } from '../screenings.pipe';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-movie-screenings',
   standalone: true,
-  imports: [NgFor, MatTabsModule, ScreeningPipe],
+  imports: [NgFor, MatTabsModule, MatButtonModule, ScreeningPipe, DatePipe, RouterModule],
   templateUrl: './movie-screenings.component.html',
   styleUrl: './movie-screenings.component.scss'
 })
