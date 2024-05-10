@@ -80,7 +80,8 @@ export class InMemoryDataService implements InMemoryDbService {
         "genres": ["Action", "Drama"],
         "runningTime": 45,
         "imagePath": `${this.baseUrl}/movie.png`,
-        "url": "movie-2"
+        "url": "movie-2",
+        "screenings": []
       },
       {
         "id": 3,
@@ -91,7 +92,8 @@ export class InMemoryDataService implements InMemoryDbService {
         "genres": ["Drama", "Thriller"],
         "runningTime": 100,
         "imagePath": `${this.baseUrl}/movie.png`,
-        "url": "movie-3"
+        "url": "movie-3",
+        "screenings": []
       },
       {
         "id": 4,
@@ -102,7 +104,8 @@ export class InMemoryDataService implements InMemoryDbService {
         "genres": ["Thriller"],
         "runningTime": 12,
         "imagePath": `${this.baseUrl}/movie.png`,
-        "url": "movie-4"
+        "url": "movie-4",
+        "screenings": []
       },
       {
         "id": 5,
@@ -113,7 +116,8 @@ export class InMemoryDataService implements InMemoryDbService {
         "genres": ["Action", "Comedy"],
         "runningTime": 30,
         "imagePath": `${this.baseUrl}/movie.png`,
-        "url": "movie-5"
+        "url": "movie-5",
+        "screenings": []
       }
     ];
 
