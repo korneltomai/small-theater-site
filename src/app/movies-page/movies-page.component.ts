@@ -6,8 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { Movie } from '../movie';
 import { MovieService } from '../movie.service';
-import { Screening } from '../screening';
 import { ScreeningPipe } from '../screenings.pipe';
+import { ScreeningHelperService } from '../screening-helper.service';
 
 @Component({
   selector: 'app-movies-page',
@@ -19,15 +19,9 @@ import { ScreeningPipe } from '../screenings.pipe';
 export class MoviesPageComponent {
   movies : Movie[] = [];
 
-  constructor(private route: ActivatedRoute, private router: Router, private movieService: MovieService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private movieService: MovieService, public screeningHelper: ScreeningHelperService) {}
 
   ngOnInit(): void {
     this.route.data.subscribe(({ movies }) => this.movies = movies );
-  }
-
-  screeningFilter(screening: Screening): boolean {
-    let sDate = new Date(screening.date);
-    let currentDate: Date = new Date("2024-05-01, 16:00");
-    return sDate.getDate() === currentDate.getDate();
   }
 }
