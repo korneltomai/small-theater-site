@@ -6,6 +6,7 @@ import { Screening } from './screening';
     standalone: true,
     pure: false
 })
+
 export class ScreeningPipe implements PipeTransform {
     transform(screenings: Screening[], dayAhead: number, callback: (screening: Screening, dayAhead: number) => boolean): any {
         if (!screenings || !callback) {

@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Movie } from '../movie';
 import { MovieScreeningsComponent } from "../movie-screenings/movie-screenings.component";
-import { Screening } from '../screening';
+
 @Component({
     selector: 'app-movie-page',
     standalone: true,
@@ -23,23 +23,19 @@ export class MoviePageComponent implements OnInit {
     genres: [],
     runningTime: 0,
     imagePath: '',
-    url: ''
+    url: '',
+    screenings: []
   };
-
-  screenings: Screening[] = [];
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    this.route.data.subscribe(({ movie, screenings }) => {
+    this.route.data.subscribe(({ movie }) => {
       if (!movie) 
         this.router.navigate(['whats-on']);
-      else {
-        this.movie = movie; 
-        this.screenings = screenings;
-      }
+      else
+        this.movie = movie;
     });
-
   }
 
 }

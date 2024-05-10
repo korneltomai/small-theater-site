@@ -7,8 +7,8 @@ import { MoviePageComponent } from './movie-page/movie-page.component';
 import { ScreeningPageComponent } from './screening-page/screening-page.component'
 import { movieResolver } from './movie-resolver.service';
 import { moviesResolver } from './movie-resolver.service';
-import { screeningsResolver } from './screening-resolver.service';
-import { screeningResolver } from './screening-resolver.service';
+import { screeningResolver } from './movie-resolver.service';
+
 
 export const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -17,7 +17,7 @@ export const routes: Routes = [
     {path: 'whats-on', component: MoviesPageComponent, resolve: { movies: moviesResolver }},
     {path: 'gift', component: GiftPageComponent},
     {path: 'movies', redirectTo: '/whats-on', pathMatch: 'full'},
-    {path: 'movies/:id', component: MoviePageComponent, resolve: { movie: movieResolver, screenings: screeningsResolver }},
-    {path: 'screenings/:id', component: ScreeningPageComponent, resolve: {screening: screeningResolver} },
+    {path: 'movies/:movieId', component: MoviePageComponent, resolve: { movie: movieResolver}},
+    {path: 'movies/:movieId/:screeningId', component: ScreeningPageComponent, resolve: {screening: screeningResolver}},
     {path: '**', redirectTo: '/home'}
 ];

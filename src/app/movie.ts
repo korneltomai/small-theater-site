@@ -10,5 +10,6 @@ export interface Movie {
     runningTime: number;
     imagePath: string;
     url: string;
+    screenings: Screening[];
   }
   

@@ -14,8 +14,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './movie-screenings.component.scss'
 })
 export class MovieScreeningsComponent {
-  @Input()
-  screenings: Screening[] = [];
+  @Input() screenings: Screening[] = [];
+  @Input() movieId: number = 0;
   
   days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   currentDate: Date = new Date("2024-05-01, 16:00");

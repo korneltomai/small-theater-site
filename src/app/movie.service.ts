@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable, share, map} from 'rxjs';
+import { Observable, share, map, catchError, of} from 'rxjs';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { Movie } from './movie';
+import { Screening } from './screening';
 
 @Injectable({
   providedIn: 'root'
@@ -27,10 +28,16 @@ export class MovieService {
     }
   }
 
-  getMovie(id: number): Observable<Movie | undefined> {
+  getMovie(movieId: number): Observable<Movie | undefined> {
     return this.getMovies().pipe(
-      map((movies) => movies.find((m) => m.id === id))
+      map((movies) => movies.find((m) => m.id === movieId))
     );
   };
+
+  getScreening(movieId: number, screeningId: number): Observable<Screening | undefined> {
+    return this.getMovie(movieId).pipe(
+      map((movie) => movie?.screenings.find((s) => s.id === screeningId))
+    );
+  }
 
 }

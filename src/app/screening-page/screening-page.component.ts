@@ -10,7 +10,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './screening-page.component.scss'
 })
 export class ScreeningPageComponent {
-  @Input()
   screening: Screening = {
     id: 0,
     price: 0,
