@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <h2>Screenings</h2>
     <mat-tab-group dynamicHeight>
-        <ng-container *ngFor="let oneComponent of amountOfRepetetions; index as i">
+        <ng-container *ngFor="let d of screeningHelper.days; index as i">
             <mat-tab label="{{ screeningHelper.getWeekday(i) }}"> 
                 <div class="container">
                     <a class="my-3 mx-2" [routerLink]="['/movies', movieId, s.id]" mat-flat-button color="primary" *ngFor="let s of screenings | screenings:i:screeningHelper.screeningFilter">

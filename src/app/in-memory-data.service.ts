@@ -81,7 +81,26 @@ export class InMemoryDataService implements InMemoryDbService {
         "runningTime": 45,
         "imagePath": `${this.baseUrl}/movie.png`,
         "url": "movie-2",
-        "screenings": []
+        "screenings": [
+          {
+            "id": 1,
+            "price": 5,
+            "date": "2024-05-02, 15:00",
+            "seats": []
+          },
+          {
+            "id": 2,
+            "price": 5,
+            "date": "2024-05-02, 16:00",
+            "seats": []
+          },
+          {
+            "id": 3,
+            "price": 5,
+            "date": "2024-05-02, 17:00",
+            "seats": []
+          },
+        ]
       },
       {
         "id": 3,
@@ -93,7 +112,20 @@ export class InMemoryDataService implements InMemoryDbService {
         "runningTime": 100,
         "imagePath": `${this.baseUrl}/movie.png`,
         "url": "movie-3",
-        "screenings": []
+        "screenings": [
+          {
+            "id": 1,
+            "price": 15,
+            "date": "2024-05-01, 10:00",
+            "seats": []
+          },
+          {
+            "id": 2,
+            "price": 15,
+            "date": "2024-05-03, 20:00",
+            "seats": []
+          },
+        ]
       },
       {
         "id": 4,
@@ -105,7 +137,50 @@ export class InMemoryDataService implements InMemoryDbService {
         "runningTime": 12,
         "imagePath": `${this.baseUrl}/movie.png`,
         "url": "movie-4",
-        "screenings": []
+        "screenings": [
+          {
+            "id": 1,
+            "price": 5,
+            "date": "2024-05-01, 15:00",
+            "seats": []
+          },
+          {
+            "id": 2,
+            "price": 5,
+            "date": "2024-05-02, 15:00",
+            "seats": []
+          },
+          {
+            "id": 3,
+            "price": 5,
+            "date": "2024-05-03, 15:00",
+            "seats": []
+          },
+          {
+            "id": 4,
+            "price": 5,
+            "date": "2024-05-04, 15:00",
+            "seats": []
+          },
+          {
+            "id": 5,
+            "price": 5,
+            "date": "2024-05-05, 15:00",
+            "seats": []
+          },
+          {
+            "id": 6,
+            "price": 5,
+            "date": "2024-05-06, 15:00",
+            "seats": []
+          },
+          {
+            "id": 7,
+            "price": 5,
+            "date": "2024-05-07, 15:00",
+            "seats": []
+          },
+        ]
       },
       {
         "id": 5,
@@ -117,10 +192,19 @@ export class InMemoryDataService implements InMemoryDbService {
         "runningTime": 30,
         "imagePath": `${this.baseUrl}/movie.png`,
         "url": "movie-5",
-        "screenings": []
+        "screenings": [
+          {
+            "id": 1,
+            "price": 10,
+            "date": "2024-05-04, 22:00",
+            "seats": []
+          },
+        ]
       }
     ];
 
-    return {movies};
+    const genres = ["Action", "Comedy", "Drama", "Thriller"]
+
+    return {movies, genres};
   }
 }

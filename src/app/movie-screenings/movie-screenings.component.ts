@@ -17,8 +17,6 @@ import { ScreeningHelperService } from '../screening-helper.service';
 export class MovieScreeningsComponent {
   @Input() screenings: Screening[] = [];
   @Input() movieId: number = 0;
-  
-  amountOfRepetetions = new Array(7);
 
   constructor (public screeningHelper: ScreeningHelperService) {}
 }

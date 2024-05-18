@@ -11,6 +11,7 @@ import { Screening } from './screening';
 export class MovieService {
 
   private moviesUrl = 'api/movies';
+  private genresUrl = 'api/genres';
   private movies: Observable<Movie[]> | undefined;
 
   httpOptions = {
@@ -40,4 +41,7 @@ export class MovieService {
     );
   }
 
+  getGenres(): Observable<string[]> {
+    return this.http.get<string[]>(this.genresUrl).pipe(share());
+  }
 }

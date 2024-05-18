@@ -1,6 +1,7 @@
 <div class="container">
+  <app-movie-filters [movies]="movies" [genres]="genres" (newFilterEvent)="filterList($event)"></app-movie-filters>
   <ul>
-    <li class="container w-75 mx-auto" *ngFor="let movie of movies; last as isLast">
+    <li class="container w-75 mx-auto" *ngFor="let movie of filteredMovies; last as isLast">
       <div class="card my-4 bg-light">
         <a [routerLink]="['/movies', movie.id]">
            <div class="card-body row g-0 text-dark">
@@ -19,14 +20,9 @@
           </div>
         </a>
           <div class="card-footer">
-            <ng-container *ngIf="movie.screenings.length == 0">
-              No available screenings.
-            </ng-container>
-            <ng-container *ngIf="movie.screenings.length > 0">
-              <a class="my-3 mx-2" [routerLink]="['/movies', movie.id, s.id]" mat-flat-button color="primary" *ngFor="let s of movie.screenings | screenings:0:this.screeningHelper.screeningFilter">
-                {{ s.date | date:'shortTime' }}
-              </a>
-            </ng-container>
+            <a class="my-3 mx-2" [routerLink]="['/movies', movie.id, s.id]" mat-flat-button color="primary" *ngFor="let s of movie.screenings | screenings:dayFilter:this.screeningHelper.screeningFilter">
+              {{ s.date | date:'shortTime' }}
+            </a>
           </div>
         </div>
       <hr *ngIf="!isLast" class="hr" />

@@ -1,0 +1,25 @@
+<div class="container w-75 my-5">
+  <form>
+    <mat-form-field appearance="outline">
+      <mat-label>Search by title</mat-label>
+        <input #searchBox matInput type="search" placeholder="Title" (input)="search(searchBox.value, genreSelect.value, daySelect.value)">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Filter by genre</mat-label>
+      <mat-select #genreSelect [value]="'All genre'" (selectionChange)="search(searchBox.value, genreSelect.value, daySelect.value)">
+        <mat-option [value]="'All genre'">All genre</mat-option>
+        <ng-container *ngFor="let g of genres">
+          <mat-option [value]="g">{{g}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Filter by day of screenings</mat-label>
+      <mat-select #daySelect [value]="0" (selectionChange)="search(searchBox.value, genreSelect.value, daySelect.value)">
+        <ng-container *ngFor="let d of screeningHelper.days; index as i">
+          <mat-option [value]="i">{{screeningHelper.getWeekday(i)}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>

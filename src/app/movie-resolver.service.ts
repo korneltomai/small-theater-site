@@ -24,3 +24,10 @@ export const screeningResolver: ResolveFn<Screening | undefined> = (
 ) => {
   return inject(MovieService).getScreening(Number(route.paramMap.get('movieId')!), Number(route.paramMap.get('screeningId')!));
 };
+
+export const genresResolver: ResolveFn<string[]> = (
+  route: ActivatedRouteSnapshot,
+  state: RouterStateSnapshot,
+) => {
+  return inject(MovieService).getGenres();
+};
