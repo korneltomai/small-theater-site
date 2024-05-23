@@ -1,8 +1,8 @@
 <div class="container">
   <app-movie-filters [movies]="movies" [genres]="genres" (newFilterEvent)="filterList($event)"></app-movie-filters>
   <ul>
-    <li class="container w-75 mx-auto" *ngFor="let movie of filteredMovies; last as isLast">
-      <div class="card my-4 bg-light">
+    <li class="container w-75 mx-auto" *ngFor="let movie of filteredMovies; first as isFirst; last as isLast">
+      <div class="card my-4 bg-light" [ngClass]="{'mb-4 mt-1': isFirst}">
         <a [routerLink]="['/movies', movie.id]">
            <div class="card-body row g-0 text-dark">
             <div class="col-md-4 col-lg-3 col-xl-2">

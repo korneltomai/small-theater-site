@@ -8,7 +8,6 @@ import { provideHttpClient } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { ScreeningHelperService } from './screening-helper.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [

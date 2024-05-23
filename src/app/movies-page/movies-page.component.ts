@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgFor, NgIf, DatePipe} from '@angular/common'
+import { NgFor, NgIf, DatePipe, NgClass} from '@angular/common'
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -17,7 +17,7 @@ import { MovieFiltersComponent } from '../movie-filters/movie-filters.component'
 @Component({
   selector: 'app-movies-page',
   standalone: true,
-  imports: [NgFor, NgIf, DatePipe, RouterModule, ScreeningPipe, MatButtonModule, MatInputModule, MatSelectModule, MovieFiltersComponent],
+  imports: [NgFor, NgIf, DatePipe, RouterModule, ScreeningPipe, MatButtonModule, MatInputModule, MatSelectModule, MovieFiltersComponent, NgClass],
   templateUrl: './movies-page.component.html',
   styleUrl: './movies-page.component.scss'
 })
